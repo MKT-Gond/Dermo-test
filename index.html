@@ -31,7 +31,9 @@
     }
 
 
-    /* FUNDO */
+    /* ========================================
+       FUNDO
+    ======================================== */
 
     .pagina {
       position: relative;
@@ -50,7 +52,9 @@
     }
 
 
-    /* CABEÇALHO */
+    /* ========================================
+       CABEÇALHO GONDOPAR
+    ======================================== */
 
     .cabecalho {
       position: absolute;
@@ -67,24 +71,52 @@
       pointer-events: none;
     }
 
+
+    /* TÍTULO GONDOPAR */
+
     .logo {
       color: var(--vermelho);
 
-      font-size: 34px;
+      font-family: "Arial Black", Arial, Helvetica, sans-serif;
+
+      font-size: 36px;
       font-weight: 900;
-      letter-spacing: 6px;
-    }
 
-    .slogan {
-      margin-top: 5px;
+      letter-spacing: 9px;
 
-      color: #777;
-
-      font-size: 11px;
-      letter-spacing: 2.2px;
+      line-height: 1;
 
       text-transform: uppercase;
+
+      transform: scaleX(1.12);
+
+      transform-origin: center;
+
+      text-shadow:
+        0 1px 1px rgba(0,0,0,0.03);
     }
+
+
+    /* SUBTÍTULO */
+
+    .slogan {
+      margin-top: 10px;
+
+      color: #666;
+
+      font-family: Arial, Helvetica, sans-serif;
+
+      font-size: 12px;
+
+      font-weight: 400;
+
+      letter-spacing: 3px;
+
+      text-transform: none;
+    }
+
+
+    /* LINHA VERMELHA */
 
     .linha {
       width: 80px;
@@ -93,10 +125,14 @@
       margin: 12px auto 0;
 
       background: var(--vermelho);
+
+      border-radius: 2px;
     }
 
 
-    /* DETALHE VERMELHO */
+    /* ========================================
+       DETALHE VERMELHO ESQUERDO
+    ======================================== */
 
     .detalhe {
       position: absolute;
@@ -108,13 +144,16 @@
       height: 48px;
 
       background: var(--vermelho);
+
       border-radius: 5px;
 
       z-index: 30;
     }
 
 
-    /* MODELO */
+    /* ========================================
+       MODELO 3D
+    ======================================== */
 
     model-viewer {
       position: absolute;
@@ -131,7 +170,9 @@
     }
 
 
-    /* PAINEL DE INSTRUÇÕES */
+    /* ========================================
+       PAINEL DE INSTRUÇÕES
+    ======================================== */
 
     .instrucoes {
       position: absolute;
@@ -161,16 +202,19 @@
       text-align: center;
     }
 
+
     .item {
       padding: 16px 3px;
 
       font-size: 9px;
+
       line-height: 1.4;
 
       color: #666;
 
       text-transform: uppercase;
     }
+
 
     .icone {
       margin-bottom: 7px;
@@ -180,10 +224,13 @@
       color: var(--vermelho);
     }
 
+
     .item strong {
       color: #444;
+
       font-size: 10px;
     }
+
 
     .separador {
       width: 42px;
@@ -195,7 +242,9 @@
     }
 
 
-    /* TELA CHEIA */
+    /* ========================================
+       BOTÃO TELA CHEIA
+    ======================================== */
 
     .fullscreen {
       position: absolute;
@@ -209,6 +258,7 @@
       height: 52px;
 
       border: none;
+
       border-radius: 50%;
 
       background: rgba(255,255,255,0.92);
@@ -221,15 +271,21 @@
       font-size: 21px;
 
       cursor: pointer;
+
+      transition: 0.2s;
     }
+
 
     .fullscreen:hover {
       color: var(--vermelho);
+
       transform: scale(1.06);
     }
 
 
-    /* VISTAS */
+    /* ========================================
+       BOTÕES DE VISTA
+    ======================================== */
 
     .vistas {
       position: absolute;
@@ -242,6 +298,7 @@
       z-index: 40;
 
       display: flex;
+
       gap: 7px;
 
       padding: 9px;
@@ -256,11 +313,13 @@
       backdrop-filter: blur(12px);
     }
 
+
     .vista {
       width: 58px;
       height: 54px;
 
       border: 1px solid transparent;
+
       border-radius: 12px;
 
       background: transparent;
@@ -270,7 +329,10 @@
       font-size: 9px;
 
       cursor: pointer;
+
+      transition: 0.2s;
     }
+
 
     .vista span {
       display: block;
@@ -280,12 +342,14 @@
       font-size: 18px;
     }
 
+
     .vista:hover {
       background: #f4f4f4;
     }
 
+
     .vista.ativa {
-      background: #fff;
+      background: #ffffff;
 
       color: var(--vermelho);
 
@@ -293,7 +357,9 @@
     }
 
 
-    /* RODAPÉ */
+    /* ========================================
+       RODAPÉ
+    ======================================== */
 
     .rodape {
       position: absolute;
@@ -305,6 +371,7 @@
       z-index: 30;
 
       display: flex;
+
       justify-content: space-between;
 
       color: #777;
@@ -314,14 +381,16 @@
       pointer-events: none;
     }
 
+
     .rodape strong {
       color: var(--vermelho);
     }
 
 
-    /* =========================================
-       CELULAR - MESMO VISUAL DO PC
-    ========================================== */
+    /* ========================================
+       CELULAR
+       Mantém aparência semelhante ao PC
+    ======================================== */
 
     @media (max-width: 700px) {
 
@@ -336,45 +405,55 @@
           );
       }
 
-      /* Logo continua no centro */
+
+      /* CABEÇALHO */
 
       .cabecalho {
-        top: 14px;
+        top: 15px;
+
         width: 100%;
       }
 
+
       .logo {
-        font-size: 23px;
-        letter-spacing: 4px;
+        font-size: 22px;
+
+        letter-spacing: 5px;
+
+        transform: scaleX(1.08);
       }
+
 
       .slogan {
-        margin-top: 4px;
+        margin-top: 6px;
 
-        font-size: 7px;
-        letter-spacing: 1.2px;
+        font-size: 8px;
+
+        letter-spacing: 1.7px;
       }
+
 
       .linha {
         width: 55px;
+
         margin-top: 7px;
       }
 
 
-      /* Mantém detalhe vermelho */
+      /* DETALHE VERMELHO */
 
       .detalhe {
         display: block;
 
-        top: 20px;
-        left: 10px;
+        top: 19px;
+        left: 9px;
 
         width: 3px;
-        height: 35px;
+        height: 36px;
       }
 
 
-      /* Mantém painel lateral */
+      /* PAINEL LATERAL */
 
       .instrucoes {
         display: block;
@@ -388,27 +467,32 @@
         border-radius: 16px;
       }
 
+
       .item {
         padding: 9px 1px;
 
         font-size: 6px;
       }
 
+
       .item strong {
         font-size: 7px;
       }
 
+
       .icone {
         font-size: 16px;
+
         margin-bottom: 4px;
       }
+
 
       .separador {
         width: 27px;
       }
 
 
-      /* Tela cheia */
+      /* TELA CHEIA */
 
       .fullscreen {
         top: 15px;
@@ -421,7 +505,7 @@
       }
 
 
-      /* Controles inferiores */
+      /* BOTÕES INFERIORES */
 
       .vistas {
         bottom: 38px;
@@ -433,6 +517,7 @@
         border-radius: 15px;
       }
 
+
       .vista {
         width: 47px;
         height: 43px;
@@ -442,13 +527,15 @@
         font-size: 6px;
       }
 
+
       .vista span {
         font-size: 14px;
+
         margin-bottom: 1px;
       }
 
 
-      /* Rodapé continua aparecendo */
+      /* RODAPÉ */
 
       .rodape {
         display: flex;
@@ -460,6 +547,7 @@
         font-size: 6px;
       }
 
+
       .site {
         display: block;
       }
@@ -467,26 +555,35 @@
     }
 
 
-    /* CELULARES MUITO ESTREITOS */
+    /* ========================================
+       CELULARES PEQUENOS
+    ======================================== */
 
     @media (max-width: 400px) {
 
       .logo {
-        font-size: 20px;
-        letter-spacing: 3px;
+        font-size: 19px;
+
+        letter-spacing: 4px;
       }
 
+
       .slogan {
-        font-size: 6px;
+        font-size: 7px;
+
+        letter-spacing: 1.3px;
       }
+
 
       .instrucoes {
         width: 60px;
       }
 
+
       .vista {
         width: 43px;
       }
+
 
       .rodape {
         font-size: 5.5px;
@@ -495,15 +592,24 @@
     }
 
   </style>
+
 </head>
 
 
 <body>
 
+
 <div class="pagina">
+
+
+  <!-- DETALHE VERMELHO -->
 
   <div class="detalhe"></div>
 
+
+  <!-- =====================================
+       CABEÇALHO
+  ====================================== -->
 
   <header class="cabecalho">
 
@@ -520,6 +626,11 @@
   </header>
 
 
+
+  <!-- =====================================
+       MODELO 3D
+  ====================================== -->
+
   <model-viewer
 
     id="produto"
@@ -529,10 +640,13 @@
     camera-controls
 
     auto-rotate
+
     auto-rotate-delay="2500"
+
     rotation-per-second="8deg"
 
     shadow-intensity="0.65"
+
     shadow-softness="0.9"
 
     exposure="1"
@@ -546,58 +660,89 @@
     camera-orbit="30deg 75deg auto"
 
     min-camera-orbit="auto auto 60%"
+
     max-camera-orbit="auto auto 300%"
 
     ar
+
     ar-modes="webxr scene-viewer quick-look">
 
   </model-viewer>
 
 
+
+  <!-- =====================================
+       INSTRUÇÕES
+  ====================================== -->
+
   <div class="instrucoes">
+
 
     <div class="item">
 
-      <div class="icone">☝</div>
+      <div class="icone">
+        ☝
+      </div>
 
       <strong>ARRASTE</strong>
+
       <br>
+
       PARA GIRAR
 
     </div>
 
+
     <div class="separador"></div>
 
 
     <div class="item">
 
-      <div class="icone">⌕</div>
+      <div class="icone">
+        ⌕
+      </div>
 
       <strong>ROLE</strong>
+
       <br>
+
       PARA APROXIMAR
 
     </div>
 
+
     <div class="separador"></div>
 
 
     <div class="item">
 
-      <div class="icone">◇</div>
+      <div class="icone">
+        ◇
+      </div>
 
       VISUALIZAÇÃO
+
       <br>
+
       <strong>360°</strong>
 
     </div>
 
+
   </div>
 
 
+
+  <!-- =====================================
+       TELA CHEIA
+  ====================================== -->
+
   <button
+
     class="fullscreen"
+
     onclick="telaCheia()"
+
     title="Tela cheia">
 
     ⛶
@@ -605,71 +750,114 @@
   </button>
 
 
+
+  <!-- =====================================
+       VISTAS
+  ====================================== -->
+
   <div class="vistas">
 
+
     <button
+
       class="vista ativa"
+
       onclick="mudarVista(this,'30deg 75deg auto')">
 
       <span>◩</span>
+
       3D
 
     </button>
 
 
+
     <button
+
       class="vista"
+
       onclick="mudarVista(this,'0deg 90deg auto')">
 
       <span>▣</span>
+
       FRENTE
 
     </button>
 
 
+
     <button
+
       class="vista"
+
       onclick="mudarVista(this,'90deg 90deg auto')">
 
       <span>▯</span>
+
       LATERAL
 
     </button>
 
 
+
     <button
+
       class="vista"
+
       onclick="mudarVista(this,'180deg 90deg auto')">
 
       <span>▣</span>
+
       TRASEIRA
 
     </button>
 
+
   </div>
 
+
+
+  <!-- =====================================
+       RODAPÉ
+  ====================================== -->
 
   <footer class="rodape">
 
     <div>
+
       © 2026
+
       <strong>GONDOPAR</strong>
+
       · Todos os direitos reservados.
+
     </div>
 
+
     <div class="site">
-      <strong>www.gondopar.com.br</strong>
+
+      <strong>
+        www.gondopar.com.br
+      </strong>
+
     </div>
 
   </footer>
 
+
 </div>
+
 
 
 <script>
 
-  const produto = document.getElementById("produto");
+  const produto =
+    document.getElementById("produto");
 
+
+  /* =====================================
+     ALTERAR VISTA
+  ====================================== */
 
   function mudarVista(botao, posicao) {
 
@@ -677,24 +865,37 @@
 
     produto.cameraOrbit = posicao;
 
+
     document
       .querySelectorAll(".vista")
-      .forEach(b => b.classList.remove("ativa"));
+      .forEach(
+        b => b.classList.remove("ativa")
+      );
+
 
     botao.classList.add("ativa");
 
   }
 
 
+
+  /* =====================================
+     TELA CHEIA
+  ====================================== */
+
   function telaCheia() {
 
-    const pagina = document.querySelector(".pagina");
+    const pagina =
+      document.querySelector(".pagina");
+
 
     if (!document.fullscreenElement) {
 
       pagina.requestFullscreen();
 
-    } else {
+    }
+
+    else {
 
       document.exitFullscreen();
 
@@ -703,6 +904,7 @@
   }
 
 </script>
+
 
 </body>
 
