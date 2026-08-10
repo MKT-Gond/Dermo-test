@@ -30,9 +30,8 @@
       --vermelho: #d80019;
     }
 
-    /* =========================
-       PÁGINA / FUNDO DE ESTÚDIO
-    ========================== */
+
+    /* FUNDO */
 
     .pagina {
       position: relative;
@@ -51,9 +50,7 @@
     }
 
 
-    /* =========================
-       LOGO
-    ========================== */
+    /* CABEÇALHO */
 
     .cabecalho {
       position: absolute;
@@ -63,7 +60,9 @@
       left: 50%;
 
       transform: translateX(-50%);
+
       text-align: center;
+      white-space: nowrap;
 
       pointer-events: none;
     }
@@ -97,9 +96,7 @@
     }
 
 
-    /* =========================
-       DETALHE VERMELHO
-    ========================== */
+    /* DETALHE VERMELHO */
 
     .detalhe {
       position: absolute;
@@ -117,9 +114,7 @@
     }
 
 
-    /* =========================
-       VISUALIZADOR
-    ========================== */
+    /* MODELO */
 
     model-viewer {
       position: absolute;
@@ -136,9 +131,7 @@
     }
 
 
-    /* =========================
-       INSTRUÇÕES ESQUERDA
-    ========================== */
+    /* PAINEL DE INSTRUÇÕES */
 
     .instrucoes {
       position: absolute;
@@ -202,9 +195,7 @@
     }
 
 
-    /* =========================
-       TELA CHEIA
-    ========================== */
+    /* TELA CHEIA */
 
     .fullscreen {
       position: absolute;
@@ -230,19 +221,15 @@
       font-size: 21px;
 
       cursor: pointer;
-
-      transition: 0.2s;
     }
 
     .fullscreen:hover {
-      transform: scale(1.06);
       color: var(--vermelho);
+      transform: scale(1.06);
     }
 
 
-    /* =========================
-       BOTÕES DE VISTA
-    ========================== */
+    /* VISTAS */
 
     .vistas {
       position: absolute;
@@ -283,8 +270,6 @@
       font-size: 9px;
 
       cursor: pointer;
-
-      transition: 0.2s;
     }
 
     .vista span {
@@ -308,9 +293,7 @@
     }
 
 
-    /* =========================
-       RODAPÉ
-    ========================== */
+    /* RODAPÉ */
 
     .rodape {
       position: absolute;
@@ -322,7 +305,6 @@
       z-index: 30;
 
       display: flex;
-
       justify-content: space-between;
 
       color: #777;
@@ -337,14 +319,28 @@
     }
 
 
-    /* =========================
-       CELULAR
-    ========================== */
+    /* =========================================
+       CELULAR - MESMO VISUAL DO PC
+    ========================================== */
 
     @media (max-width: 700px) {
 
+      .pagina {
+        background:
+          radial-gradient(
+            ellipse at 50% 42%,
+            #f7f7f7 0%,
+            #eeeeee 35%,
+            #dddddd 72%,
+            #cccccc 100%
+          );
+      }
+
+      /* Logo continua no centro */
+
       .cabecalho {
-        top: 15px;
+        top: 14px;
+        width: 100%;
       }
 
       .logo {
@@ -353,57 +349,147 @@
       }
 
       .slogan {
+        margin-top: 4px;
+
         font-size: 7px;
-        letter-spacing: 1.3px;
+        letter-spacing: 1.2px;
       }
 
       .linha {
-        width: 50px;
+        width: 55px;
         margin-top: 7px;
       }
 
-      .detalhe,
+
+      /* Mantém detalhe vermelho */
+
+      .detalhe {
+        display: block;
+
+        top: 20px;
+        left: 10px;
+
+        width: 3px;
+        height: 35px;
+      }
+
+
+      /* Mantém painel lateral */
+
       .instrucoes {
-        display: none;
+        display: block;
+
+        left: 8px;
+
+        width: 67px;
+
+        padding: 6px 5px;
+
+        border-radius: 16px;
       }
 
-      .fullscreen {
-        top: 15px;
-        right: 14px;
+      .item {
+        padding: 9px 1px;
 
-        width: 42px;
-        height: 42px;
-
-        font-size: 17px;
+        font-size: 6px;
       }
 
-      .vistas {
-        bottom: 42px;
-
-        padding: 6px;
-      }
-
-      .vista {
-        width: 48px;
-        height: 46px;
-
+      .item strong {
         font-size: 7px;
       }
 
-      .vista span {
-        font-size: 15px;
+      .icone {
+        font-size: 16px;
+        margin-bottom: 4px;
       }
 
+      .separador {
+        width: 27px;
+      }
+
+
+      /* Tela cheia */
+
+      .fullscreen {
+        top: 15px;
+        right: 10px;
+
+        width: 39px;
+        height: 39px;
+
+        font-size: 16px;
+      }
+
+
+      /* Controles inferiores */
+
+      .vistas {
+        bottom: 38px;
+
+        gap: 3px;
+
+        padding: 5px;
+
+        border-radius: 15px;
+      }
+
+      .vista {
+        width: 47px;
+        height: 43px;
+
+        border-radius: 9px;
+
+        font-size: 6px;
+      }
+
+      .vista span {
+        font-size: 14px;
+        margin-bottom: 1px;
+      }
+
+
+      /* Rodapé continua aparecendo */
+
       .rodape {
-        left: 12px;
-        right: 12px;
+        display: flex;
+
+        left: 9px;
+        right: 9px;
         bottom: 8px;
 
-        font-size: 8px;
+        font-size: 6px;
       }
 
       .site {
-        display: none;
+        display: block;
+      }
+
+    }
+
+
+    /* CELULARES MUITO ESTREITOS */
+
+    @media (max-width: 400px) {
+
+      .logo {
+        font-size: 20px;
+        letter-spacing: 3px;
+      }
+
+      .slogan {
+        font-size: 6px;
+      }
+
+      .instrucoes {
+        width: 60px;
+      }
+
+      .vista {
+        width: 43px;
+      }
+
+      .rodape {
+        font-size: 5.5px;
       }
 
     }
@@ -419,8 +505,6 @@
   <div class="detalhe"></div>
 
 
-  <!-- LOGO -->
-
   <header class="cabecalho">
 
     <div class="logo">
@@ -428,15 +512,13 @@
     </div>
 
     <div class="slogan">
-      Soluções em mobiliário para farmácias
+      Soluções e mobiliários especiais
     </div>
 
     <div class="linha"></div>
 
   </header>
 
-
-  <!-- MODELO 3D -->
 
   <model-viewer
 
@@ -471,8 +553,6 @@
 
   </model-viewer>
 
-
-  <!-- INSTRUÇÕES -->
 
   <div class="instrucoes">
 
@@ -515,8 +595,6 @@
   </div>
 
 
-  <!-- TELA CHEIA -->
-
   <button
     class="fullscreen"
     onclick="telaCheia()"
@@ -526,8 +604,6 @@
 
   </button>
 
-
-  <!-- VISTAS -->
 
   <div class="vistas">
 
@@ -572,8 +648,6 @@
 
   </div>
 
-
-  <!-- RODAPÉ -->
 
   <footer class="rodape">
 
