@@ -1,155 +1,48 @@
+site teste
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
-  <title>Gondopar - Visualização 360°</title>
+<title>Visualizador 3D</title>
 
-  <script
-    type="module"
-    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
-  </script>
+<style>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+body{
+margin:0;
+background:#d9dde2;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #eeeeee;
-      color: #333333;
-      overflow: hidden;
-    }
+model-viewer{
+width:100%;
+height:100vh;
+background:#d9dde2;
+}
 
-    .pagina {
-      width: 100%;
-      height: 100vh;
-      position: relative;
-    }
+</style>
 
-    model-viewer {
-      width: 100%;
-      height: 100vh;
-
-      background: linear-gradient(
-        180deg,
-        #f7f7f7 0%,
-        #ededed 55%,
-        #d6d6d6 100%
-      );
-    }
-
-    .titulo {
-      position: absolute;
-      top: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
-
-      background: rgba(255,255,255,0.88);
-      padding: 10px 22px;
-      border-radius: 30px;
-
-      font-size: 18px;
-      font-weight: bold;
-      letter-spacing: 1px;
-
-      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-
-      pointer-events: none;
-    }
-
-    .instrucao {
-      position: absolute;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
-
-      background: rgba(255,255,255,0.9);
-      padding: 10px 18px;
-      border-radius: 24px;
-
-      font-size: 14px;
-
-      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-
-      pointer-events: none;
-    }
-
-    @media (max-width: 600px) {
-
-      .titulo {
-        top: 16px;
-        font-size: 15px;
-        padding: 9px 16px;
-      }
-
-      .instrucao {
-        bottom: 16px;
-        font-size: 12px;
-        padding: 9px 14px;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <div class="pagina">
+<model-viewer
+src="DERMO TESTE.glb"
+camera-controls
+auto-rotate
+shadow-intensity="1"
+exposure="1"
+ar>
 
-    <div class="titulo">
-      GONDOPAR
-    </div>
-
-    <model-viewer
-
-      src="DERMO TESTE.glb"
-
-      camera-controls
-
-      auto-rotate
-      auto-rotate-delay="1500"
-      rotation-per-second="15deg"
-
-      shadow-intensity="1.5"
-      shadow-softness="0.8"
-
-      exposure="1.15"
-
-      environment-image="neutral"
-
-      tone-mapping="neutral"
-
-      interaction-prompt="auto"
-
-      ar
-      ar-modes="webxr scene-viewer quick-look"
-
-      camera-orbit="0deg 75deg auto"
-
-      min-camera-orbit="auto auto 60%"
-      max-camera-orbit="auto auto 300%"
-
-      touch-action="pan-y"
-
-    >
-    </model-viewer>
-
-    <div class="instrucao">
-      ↻ Arraste para girar • Use o zoom para aproximar
-    </div>
-
-  </div>
+</model-viewer>
 
 </body>
 
 </html>
+
